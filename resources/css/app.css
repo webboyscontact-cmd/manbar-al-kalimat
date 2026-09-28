@@ -1,0 +1,279 @@
+/* ===== منبر الكلمات - التصميم الأساسي ===== */
+
+:root {
+    --mk-bg: #fbfaf7;
+    --mk-surface: #ffffff;
+    --mk-text: #1f1c19;
+    --mk-text-muted: #6b6259;
+    --mk-border: #e8e3da;
+    --mk-accent: #8a5a3b;
+    --mk-accent-dark: #6e4730;
+    --mk-font-heading: 'Amiri', 'Noto Naskh Arabic', serif;
+    --mk-font-body: 'Noto Kufi Arabic', 'Tajawal', sans-serif;
+}
+
+[data-theme="dark"] {
+    --mk-bg: #16140f;
+    --mk-surface: #201c17;
+    --mk-text: #efe9e0;
+    --mk-text-muted: #a89d8f;
+    --mk-border: #362f27;
+    --mk-accent: #c98b5e;
+    --mk-accent-dark: #e0a679;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: var(--mk-bg);
+    color: var(--mk-text);
+    font-family: var(--mk-font-body);
+    line-height: 1.8;
+    transition: background-color .25s ease, color .25s ease;
+}
+
+h1, h2, h3, h4, .site-logo {
+    font-family: var(--mk-font-heading);
+}
+
+a { color: var(--mk-accent); text-decoration: none; }
+a:hover { color: var(--mk-accent-dark); }
+
+/* ===== الهيدر ===== */
+.mk-header {
+    background: var(--mk-surface);
+    border-bottom: 1px solid var(--mk-border);
+    padding: .9rem 0;
+}
+
+.mk-header .site-logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--mk-text);
+}
+
+.mk-header .site-logo small {
+    display: block;
+    font-family: var(--mk-font-body);
+    font-size: .75rem;
+    color: var(--mk-text-muted);
+    font-weight: 400;
+}
+
+.mk-nav a {
+    color: var(--mk-text);
+    margin-inline-start: 1.25rem;
+    font-size: .95rem;
+}
+
+.mk-icon-btn {
+    background: none;
+    border: 1px solid var(--mk-border);
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--mk-text);
+}
+
+/* ===== Hero ===== */
+.mk-hero {
+    text-align: center;
+    padding: 5rem 1rem;
+    border-bottom: 1px solid var(--mk-border);
+}
+
+.mk-hero h1 {
+    font-size: 2.6rem;
+    margin-bottom: .75rem;
+}
+
+.mk-hero p {
+    color: var(--mk-text-muted);
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+}
+
+.mk-btn {
+    display: inline-block;
+    padding: .7rem 2rem;
+    background: var(--mk-accent);
+    color: #fff;
+    border-radius: 4px;
+    font-weight: 600;
+    border: none;
+}
+
+.mk-btn:hover { background: var(--mk-accent-dark); color: #fff; }
+
+.mk-btn-outline {
+    display: inline-block;
+    padding: .6rem 1.6rem;
+    border: 1px solid var(--mk-accent);
+    color: var(--mk-accent);
+    border-radius: 4px;
+}
+
+/* ===== بطاقات الأقسام ===== */
+.mk-category-card {
+    display: block;
+    background: var(--mk-surface);
+    border: 1px solid var(--mk-border);
+    border-radius: 8px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    color: var(--mk-text);
+    height: 100%;
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.mk-category-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,.06);
+    color: var(--mk-text);
+}
+
+.mk-category-card .count {
+    color: var(--mk-text-muted);
+    font-size: .85rem;
+}
+
+/* ===== بطاقات المنشورات ===== */
+.mk-post-card {
+    background: var(--mk-surface);
+    border: 1px solid var(--mk-border);
+    border-radius: 8px;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.mk-post-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    background: var(--mk-border);
+}
+
+.mk-post-card .body {
+    padding: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.mk-post-card .category-tag {
+    color: var(--mk-accent);
+    font-size: .8rem;
+    font-weight: 600;
+    margin-bottom: .4rem;
+}
+
+.mk-post-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: .5rem;
+}
+
+.mk-post-card .excerpt {
+    color: var(--mk-text-muted);
+    font-size: .9rem;
+    flex: 1;
+}
+
+.mk-post-card .meta {
+    color: var(--mk-text-muted);
+    font-size: .78rem;
+    margin-top: .8rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ===== صفحة القراءة ===== */
+.mk-reading {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.mk-reading .cover {
+    width: 100%;
+    max-height: 380px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.mk-reading .content {
+    font-size: 1.25rem;
+    line-height: 2.2;
+}
+
+.mk-reading .content p {
+    margin-bottom: 1.5rem;
+}
+
+.mk-reading .content blockquote {
+    border-inline-start: 3px solid var(--mk-accent);
+    padding-inline-start: 1rem;
+    color: var(--mk-text-muted);
+    font-style: italic;
+}
+
+/* ===== الفوتر ===== */
+.mk-footer {
+    background: var(--mk-surface);
+    border-top: 1px solid var(--mk-border);
+    padding: 3rem 0 1.5rem;
+    margin-top: 4rem;
+    color: var(--mk-text-muted);
+}
+
+/* ===== لوحة التحكم ===== */
+.mk-admin-sidebar {
+    background: var(--mk-surface);
+    border-inline-end: 1px solid var(--mk-border);
+    min-height: 100vh;
+    padding: 1.5rem 1rem;
+}
+
+.mk-admin-sidebar a {
+    display: block;
+    padding: .6rem .8rem;
+    border-radius: 6px;
+    color: var(--mk-text);
+    margin-bottom: .25rem;
+}
+
+.mk-admin-sidebar a.active,
+.mk-admin-sidebar a:hover {
+    background: var(--mk-accent);
+    color: #fff;
+}
+
+.mk-stat-card {
+    background: var(--mk-surface);
+    border: 1px solid var(--mk-border);
+    border-radius: 8px;
+    padding: 1.25rem;
+}
+
+.mk-stat-card .value {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.mk-stat-card .label {
+    color: var(--mk-text-muted);
+    font-size: .85rem;
+}
+
+@media (max-width: 767px) {
+    .mk-hero h1 { font-size: 1.9rem; }
+    .mk-reading .content { font-size: 1.1rem; line-height: 2; }
+}
